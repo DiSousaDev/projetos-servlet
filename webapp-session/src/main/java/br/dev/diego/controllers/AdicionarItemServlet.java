@@ -26,16 +26,9 @@ public class AdicionarItemServlet extends HttpServlet {
         if(produtoOptional.isPresent()){
             ItemPedido itemPedido = new ItemPedido(1, produtoOptional.get());
             HttpSession session = req.getSession();
-            Pedido pedido;
-            if(session.getAttribute("pedido") == null) {
-                pedido = new Pedido();
-                session.setAttribute("pedido", pedido);
-            } else {
-                pedido = (Pedido) session.getAttribute("pedido");
-            }
+            Pedido pedido = (Pedido) session.getAttribute("pedido");
             pedido.adicionarItem(itemPedido);
         }
-
         resp.sendRedirect(req.getContextPath() + "/ver-carrinho");
 
     }

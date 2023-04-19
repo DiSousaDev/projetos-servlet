@@ -3,7 +3,6 @@ package br.dev.diego.controllers;
 import br.dev.diego.entities.Produto;
 import br.dev.diego.services.LoginService;
 import br.dev.diego.services.ProdutoService;
-import br.dev.diego.services.impl.LoginServiceCookieImpl;
 import br.dev.diego.services.impl.LoginServiceSessionImpl;
 import br.dev.diego.services.impl.ProdutoServiceImpl;
 import jakarta.servlet.ServletException;
@@ -28,6 +27,9 @@ public class ProdutoServlet extends HttpServlet {
         LoginService auth = new LoginServiceSessionImpl();
         Optional<String> username = auth.getUsername(req);
 
+        String atributoApp = (String) getServletContext().getAttribute("att1");
+        String atributoRequest = (String) req.getAttribute("att2");
+
         resp.setContentType("text/html;charset=UTF-8");
 
         try (PrintWriter out = resp.getWriter()) {
@@ -40,6 +42,8 @@ public class ProdutoServlet extends HttpServlet {
             out.println("    </head>");
             out.println("    <body>");
             out.println("        <h1>Lista de Produtos</h1>");
+            out.println("        <h3>Atributo App: " + atributoApp +"</h3>");
+            out.println("        <h3>Atributo request: " + atributoRequest +"</h3>");
             if(username.isPresent()) {
             out.println("        <div style='color:blue;'><h3>Olá " + username.get() + " bem vindo(a).</div></h3>");
             }

@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" import="br.dev.diego.entities.*" %>
 <%
     Pedido pedido = (Pedido) session.getAttribute("pedido");
-    boolean temPedido = pedido != null && !pedido.getItemPedidos().isEmpty();
+    boolean temPedido = !pedido.getItemPedidos().isEmpty();
 %>
 <html>
 <head>
