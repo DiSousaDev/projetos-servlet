@@ -10,48 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9235b68-5b19-4935-b066-b59403733cff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/09db9c72b05393fdb720ba698a86a483d7f93cd0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/6/3676be27fb9c51ea97c57ccfb4ef4cc4aa9db43f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/a/3a4003804d8e5671cecf29629ec208eacf8426db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/dbbf18db684b6678dab435e84c659112456aeb19" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/1/e15aa9f8637e668fcc3a289f649ec8b02660a535" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/6/e641d675fcf073f9f6da9221947a6d3aeb717f6b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/9/09db9c72b05393fdb720ba698a86a483d7f93cd0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/6/3676be27fb9c51ea97c57ccfb4ef4cc4aa9db43f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/a/3a4003804d8e5671cecf29629ec208eacf8426db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/b/dbbf18db684b6678dab435e84c659112456aeb19" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/1/e15aa9f8637e668fcc3a289f649ec8b02660a535" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/6/e641d675fcf073f9f6da9221947a6d3aeb717f6b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoExcluirServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoFormServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/entities/Categoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/filters/ConnectionFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/CategoriaRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/ProdutoJdbcImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/exceptions/ServerJdbcException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/ProdutoServiceJdbcImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/util/DBConnectionUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/listar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/3/1337d72a3b1928dba82aa5210f5cdc0e88ce895b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/0/506055734f7e83f01d5acd95493b2bb254368af1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/3/1337d72a3b1928dba82aa5210f5cdc0e88ce895b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/0/506055734f7e83f01d5acd95493b2bb254368af1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/AdicionarItemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/AdicionarItemServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/RemoverItemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/RemoverItemServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/entities/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/entities/Produto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/ProdutoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/ProdutoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/ProdutoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/ProdutoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/carrinho.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/carrinho.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/listar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listar.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +67,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -226,7 +190,7 @@
       <workItem from="1681951899309" duration="667000" />
       <workItem from="1681952592359" duration="5889000" />
       <workItem from="1682482459894" duration="963000" />
-      <workItem from="1682911383629" duration="17470000" />
+      <workItem from="1682911383629" duration="23186000" />
     </task>
     <servers />
   </component>
