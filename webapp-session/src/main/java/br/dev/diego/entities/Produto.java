@@ -1,20 +1,26 @@
 package br.dev.diego.entities;
 
+import java.time.LocalDate;
+
 public class Produto {
 
     private Long id;
     private String nome;
-    private String tipo;
+    private Categoria categoria;
     private int preco;
+    private String sku;
+    private LocalDate dataRegistro;
 
     public Produto() {
     }
 
-    public Produto(Long id, String nome, String tipo, int preco) {
+    public Produto(Long id, String nome, Long categoriaId, int preco, String sku, LocalDate dataRegistro) {
         this.id = id;
         this.nome = nome;
-        this.tipo = tipo;
+        this.categoria = new Categoria(categoriaId);
         this.preco = preco;
+        this.sku = sku;
+        this.dataRegistro = dataRegistro;
     }
 
     public Long getId() {
@@ -33,12 +39,12 @@ public class Produto {
         this.nome = nome;
     }
 
-    public String getTipo() {
-        return tipo;
+    public Categoria getCategoria() {
+        return categoria;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     public int getPreco() {
@@ -47,5 +53,21 @@ public class Produto {
 
     public void setPreco(int preco) {
         this.preco = preco;
+    }
+
+    public String getSku() {
+        return sku;
+    }
+
+    public void setSku(String sku) {
+        this.sku = sku;
+    }
+
+    public LocalDate getDataRegistro() {
+        return dataRegistro;
+    }
+
+    public void setDataRegistro(LocalDate dataRegistro) {
+        this.dataRegistro = dataRegistro;
     }
 }

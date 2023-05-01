@@ -4,7 +4,7 @@ import br.dev.diego.entities.ItemPedido;
 import br.dev.diego.entities.Pedido;
 import br.dev.diego.entities.Produto;
 import br.dev.diego.services.ProdutoService;
-import br.dev.diego.services.impl.ProdutoServiceImpl;
+import br.dev.diego.services.impl.ProdutoServiceJdbcImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.util.Optional;
 
 @WebServlet("/adicionar-item")
@@ -21,9 +22,12 @@ public class AdicionarItemServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Long id = Long.parseLong(req.getParameter("id"));
-        ProdutoService produtoService = new ProdutoServiceImpl();
-        Optional<Produto> produtoOptional = produtoService.buscarPorId(id);
-        if(produtoOptional.isPresent()){
+
+        Connection conn = (Connection) req.getAttribute("conn");
+        ProdutoService service = new ProdutoServiceJdbcImpl(conn);
+        Optional<Produto> produtoOptional = service.buscarPorId(id);
+
+        if (produtoOptional.isPresent()) {
             ItemPedido itemPedido = new ItemPedido(1, produtoOptional.get());
             HttpSession session = req.getSession();
             Pedido pedido = (Pedido) session.getAttribute("pedido");
