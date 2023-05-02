@@ -35,6 +35,7 @@ public class AppListner implements ServletContextListener,
         System.out.println("Iniciando request.");
         servletContext.log("Iniciando request.");
         sre.getServletContext().setAttribute("att2", "Algum valor disponivel no ciclo de vida da request.");
+        sre.getServletRequest().setAttribute("title", "Catalogo Servlet");
     }
 
     @Override

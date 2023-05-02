@@ -1,7 +1,6 @@
 package br.dev.diego.controllers;
 
 import br.dev.diego.services.LoginService;
-import br.dev.diego.services.impl.LoginServiceCookieImpl;
 import br.dev.diego.services.impl.LoginServiceSessionImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -59,6 +58,7 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = req.getSession();
             session.setAttribute("username", username);
 
+            req.setAttribute("title", req.getAttribute("title") + ": Login");
             resp.sendRedirect(req.getContextPath() + "/login.html");
 
         } else {

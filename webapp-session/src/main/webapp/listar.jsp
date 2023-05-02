@@ -8,17 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" import="java.util.*, br.dev.diego.entities.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<html>
-<head>
-    <title>Lista de produtos</title>
-</head>
-<body>
-<h1>Listando produtos</h1>
+<jsp:include page="layout/header.jsp" />
+<h3>${title}</h3>
 <c:if test="${username.present}">
-    <div>Olá ${username.get()}, seja bem vindo(a)!</div>
-    <p><a href="${pageContext.request.contextPath}/produtos/form">Novo produto [+]</a></p>
+    <div class="alert alert-info">Olá ${username.get()}, seja bem vindo(a)!</div>
+    <a class="btn btn-primary my-2" href="${pageContext.request.contextPath}/produtos/form">Novo produto [+]</a>
 </c:if>
-<table>
+<table class="table table-hover table-striped">
     <tr>
         <th>Id</th>
         <th>Nome</th>
@@ -42,13 +38,16 @@
             <c:if test="${username.present}">
                 <td>${p.preco}</td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/adicionar-item?id=${p.id}">Adicionar</a>
+                    <a class="btn btn-sm btn-primary"
+                       href="${pageContext.request.contextPath}/adicionar-item?id=${p.id}">Adicionar</a>
                 </td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/produtos/form?id=${p.id}">Editar</a>
+                    <a class="btn btn-sm btn-success"
+                       href="${pageContext.request.contextPath}/produtos/form?id=${p.id}">Editar</a>
                 </td>
                 <td>
                     <a
+                            class="btn btn-sm btn-danger"
                             onclick="return confirm('Tem certeza que deseja excluir?')"
                             href="${pageContext.request.contextPath}/produtos/excluir?id=${p.id}">Excluir
                     </a>
@@ -59,5 +58,4 @@
 </table>
 <p>${applicationScope.atributoApp}</p>
 <p>${requestScope.atributoRequest}</p>
-</body>
-</html>
+<jsp:include page="layout/footer.jsp" />
