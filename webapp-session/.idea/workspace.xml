@@ -10,27 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9235b68-5b19-4935-b066-b59403733cff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layout/footer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layout/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/09db9c72b05393fdb720ba698a86a483d7f93cd0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/6/3676be27fb9c51ea97c57ccfb4ef4cc4aa9db43f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/6/e641d675fcf073f9f6da9221947a6d3aeb717f6b" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/entities/Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/UsuarioRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/UsuarioRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/UsuarioService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/UsuarioServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/1/e15aa9f8637e668fcc3a289f649ec8b02660a535" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/9/09db9c72b05393fdb720ba698a86a483d7f93cd0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/6/3676be27fb9c51ea97c57ccfb4ef4cc4aa9db43f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/6/e641d675fcf073f9f6da9221947a6d3aeb717f6b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/1/e15aa9f8637e668fcc3a289f649ec8b02660a535" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoFormServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoFormServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/VerCarrinhoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/VerCarrinhoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/listners/AppListner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/listners/AppListner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/carrinho.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/carrinho.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/listar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/CategoriaRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/CategoriaRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/ProdutoJdbcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/ProdutoJdbcImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/ProdutoServiceJdbcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/ProdutoServiceJdbcImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +34,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Jsp File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -208,7 +202,7 @@
       <workItem from="1682482459894" duration="963000" />
       <workItem from="1682911383629" duration="29660000" />
       <workItem from="1683036185322" duration="680000" />
-      <workItem from="1683062240268" duration="1215000" />
+      <workItem from="1683062240268" duration="2733000" />
     </task>
     <servers />
   </component>
@@ -234,12 +228,12 @@
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/ProdutoJdbcImpl.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/ProdutoJdbcImpl.java</url>
           <line>66</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/ProdutoJdbcImpl.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/ProdutoJdbcImpl.java</url>
           <line>89</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>

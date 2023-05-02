@@ -2,8 +2,8 @@ package br.dev.diego.services.impl;
 
 import br.dev.diego.entities.Categoria;
 import br.dev.diego.entities.Produto;
-import br.dev.diego.repositories.CategoriaRepositoryImpl;
-import br.dev.diego.repositories.ProdutoJdbcImpl;
+import br.dev.diego.repositories.impl.CategoriaRepositoryImpl;
+import br.dev.diego.repositories.impl.ProdutoJdbcImpl;
 import br.dev.diego.repositories.Repository;
 import br.dev.diego.services.ProdutoService;
 import br.dev.diego.services.exceptions.ServerJdbcException;

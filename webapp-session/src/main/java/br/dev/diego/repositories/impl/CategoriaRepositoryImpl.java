@@ -1,6 +1,7 @@
-package br.dev.diego.repositories;
+package br.dev.diego.repositories.impl;
 
 import br.dev.diego.entities.Categoria;
+import br.dev.diego.repositories.Repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,7 +1,10 @@
 package br.dev.diego.controllers;
 
+import br.dev.diego.entities.Usuario;
 import br.dev.diego.services.LoginService;
+import br.dev.diego.services.UsuarioService;
 import br.dev.diego.services.impl.LoginServiceSessionImpl;
+import br.dev.diego.services.impl.UsuarioServiceImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,13 +14,11 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
 import java.util.Optional;
 
 @WebServlet({"/login", "/login.html"})
 public class LoginServlet extends HttpServlet {
-
-    private final static String USERNAME = "admin";
-    private final static String PASSWORD = "12345";
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -53,7 +54,10 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        if (USERNAME.equals(username) && PASSWORD.equals(password)) {
+        UsuarioService service = new UsuarioServiceImpl((Connection) req.getAttribute("conn"));
+        Optional<Usuario> usuarioOptional = service.login(username, password);
+
+        if (usuarioOptional.isPresent()) {
 
             HttpSession session = req.getSession();
             session.setAttribute("username", username);
