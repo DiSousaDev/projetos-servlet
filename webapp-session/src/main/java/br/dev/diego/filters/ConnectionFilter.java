@@ -1,7 +1,8 @@
 package br.dev.diego.filters;
 
+import br.dev.diego.services.exceptions.ConnectionJdbcException;
 import br.dev.diego.services.exceptions.ServerJdbcException;
-import br.dev.diego.util.DBConnectionUtil;
+import br.dev.diego.util.DBConnectionDSUtil;
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -20,7 +21,7 @@ public class ConnectionFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 
-        try (Connection conn = DBConnectionUtil.getConnection()) {
+        try (Connection conn = DBConnectionDSUtil.getConnection()) {
 
             if(conn.getAutoCommit()) {
                 conn.setAutoCommit(false);
@@ -35,7 +36,7 @@ public class ConnectionFilter implements Filter {
                 ((HttpServletResponse)servletResponse).sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getMessage());
                 e.printStackTrace();
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ConnectionJdbcException e) {
             e.printStackTrace();
         }
 
