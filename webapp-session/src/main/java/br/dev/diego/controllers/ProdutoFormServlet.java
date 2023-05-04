@@ -1,9 +1,10 @@
 package br.dev.diego.controllers;
 
+import br.dev.diego.config.ProdutoServicePrincipal;
 import br.dev.diego.entities.Categoria;
 import br.dev.diego.entities.Produto;
 import br.dev.diego.services.ProdutoService;
-import br.dev.diego.services.impl.ProdutoServiceJdbcImpl;
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,7 +12,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -23,10 +23,12 @@ import java.util.Optional;
 @WebServlet("/produtos/form")
 public class ProdutoFormServlet extends HttpServlet {
 
+    @Inject
+    @ProdutoServicePrincipal
+    private ProdutoService service;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Connection conn = (Connection) req.getAttribute("conn");
-        ProdutoService service = new ProdutoServiceJdbcImpl(conn);
         Long id = getId(req.getParameter("id"));
 
         Produto produto = new Produto();
@@ -46,8 +48,6 @@ public class ProdutoFormServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Connection conn = (Connection) req.getAttribute("conn");
-        ProdutoService service = new ProdutoServiceJdbcImpl(conn);
         Long id = getId(req.getParameter("id"));
         String nome = req.getParameter("nome");
         Integer preco = getPreco(req.getParameter("preco"));

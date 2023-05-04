@@ -1,7 +1,10 @@
 package br.dev.diego.repositories.impl;
 
+import br.dev.diego.config.MySqlConn;
+import br.dev.diego.config.Repository;
 import br.dev.diego.entities.Categoria;
-import br.dev.diego.repositories.Repository;
+import br.dev.diego.repositories.CrudRepository;
+import jakarta.inject.Inject;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,11 +14,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoriaRepositoryImpl implements Repository<Categoria> {
+@Repository
+public class CategoriaRepositoryImpl implements CrudRepository<Categoria> {
 
     private Connection conn;
 
-    public CategoriaRepositoryImpl(Connection conn) {
+    @Inject
+    public CategoriaRepositoryImpl(@MySqlConn Connection conn) {
         this.conn = conn;
     }
 

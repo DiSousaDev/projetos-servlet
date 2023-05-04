@@ -10,7 +10,7 @@
 
 <jsp:include page="layout/header.jsp" />
 <h3>${title}</h3>
-<c:if test="${!sessionScope.pedido.itemPedidos.isEmpty()}">
+<c:if test="${!pedido.itemPedidos.isEmpty()}">
     <table class="table table-hover table-striped">
         <tr>
             <th>Id</th>
@@ -20,7 +20,7 @@
             <th>Total</th>
             <th>Remover Item</th>
         </tr>
-        <c:forEach items="${sessionScope.pedido.itemPedidos}" var="item">
+        <c:forEach items="${pedido.itemPedidos}" var="item">
             <tr>
                 <td>${item.produto.id}</td>
                 <td>${item.produto.nome}</td>
@@ -32,16 +32,16 @@
         </c:forEach>
         <tr>
             <td colspan="5" style="text-align: right">Valor Total:</td>
-            <td>${sessionScope.pedido.totalPedido}</td>
+            <td>${pedido.totalPedido}</td>
         </tr>
     </table>
 </c:if>
-<c:if test="${sessionScope.pedido.itemPedidos.isEmpty()}">
+<c:if test="${pedido.itemPedidos.isEmpty()}">
     <div class="alert alert-warning">Nenhum item adicionado ao carrinho de compras.</div>
 </c:if>
 <div class="my-2">
     <a class="btn btn-secondary" href="${pageContext.request.contextPath}/index.jsp">Voltar</a>
-    <c:if test="${!sessionScope.pedido.itemPedidos.isEmpty()}">
+    <c:if test="${!pedido.itemPedidos.isEmpty()}">
         <a class="btn btn-success" href="${pageContext.request.contextPath}/produtos">Continuar comprando</a>
     </c:if>
 </div>

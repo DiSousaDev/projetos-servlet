@@ -1,8 +1,13 @@
 package br.dev.diego.repositories.impl;
 
+import br.dev.diego.config.MySqlConn;
+import br.dev.diego.config.Repository;
 import br.dev.diego.entities.Categoria;
 import br.dev.diego.entities.Produto;
-import br.dev.diego.repositories.Repository;
+import br.dev.diego.repositories.CrudRepository;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import jakarta.inject.Inject;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -12,13 +17,26 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
-public class ProdutoJdbcImpl implements Repository<Produto> {
+@Repository
+public class ProdutoJdbcImpl implements CrudRepository<Produto> {
 
+    @Inject
+    @MySqlConn
     private Connection conn;
 
-    public ProdutoJdbcImpl(Connection conn) {
-        this.conn = conn;
+    @Inject
+    private Logger log;
+
+    @PostConstruct
+    public void iniciar() {
+        log.info("Iniciando beam " + this.getClass().getName());
+    }
+
+    @PreDestroy
+    public void encerrar() {
+        log.info("Finalizando beam " + this.getClass().getName());
     }
 
     @Override

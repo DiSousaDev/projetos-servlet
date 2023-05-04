@@ -1,7 +1,10 @@
 package br.dev.diego.repositories.impl;
 
+import br.dev.diego.config.MySqlConn;
+import br.dev.diego.config.Repository;
 import br.dev.diego.entities.Usuario;
 import br.dev.diego.repositories.UsuarioRepository;
+import jakarta.inject.Inject;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,13 +12,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+@Repository
 public class UsuarioRepositoryImpl implements UsuarioRepository {
 
+    @Inject
+    @MySqlConn
     private Connection conn;
-
-    public UsuarioRepositoryImpl(Connection conn) {
-        this.conn = conn;
-    }
 
     @Override
     public List<Usuario> listar() throws SQLException {
@@ -49,7 +51,7 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
             stmt.setString(1, username);
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
-                   user = getUsuario(rs);
+                    user = getUsuario(rs);
                 }
             }
         }

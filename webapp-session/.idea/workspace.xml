@@ -10,12 +10,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9235b68-5b19-4935-b066-b59403733cff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/exceptions/ConnectionJdbcException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/util/DBConnectionDSUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/config/LoginServicePrincipal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/config/MySqlConn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/config/PedidoCompra.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/config/ProducerResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/config/ProdutoServicePrincipal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/config/Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/config/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/interceptors/Logging.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/interceptors/LoggingInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/interceptors/TransactionInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/interceptors/TransactionalJdbc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/AdicionarItemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/AdicionarItemServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoExcluirServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoExcluirServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoFormServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoFormServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/RemoverItemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/RemoverItemServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/entities/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/entities/Pedido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/filters/ConnectionFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/filters/ConnectionFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/filters/LoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/filters/LoginFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/listners/AppListner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/listners/AppListner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/CrudRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/UsuarioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/CategoriaRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/CategoriaRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/ProdutoJdbcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/ProdutoJdbcImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/UsuarioRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/UsuarioRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/LoginServiceCookieImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/LoginServiceCookieImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/LoginServiceSessionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/LoginServiceSessionImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/ProdutoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/ProdutoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/ProdutoServiceJdbcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/ProdutoServiceJdbcImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/UsuarioServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/UsuarioServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/carrinho.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/carrinho.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/listar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listar.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +60,8 @@
       <list>
         <option value="Jsp File" />
         <option value="Interface" />
+        <option value="cdi.beans_4_0" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -49,6 +84,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2Oa6gNqD0znkRHfggn7BCV0XwXG" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -79,11 +117,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.dev.diego.config" />
       <recent name="br.dev.diego.services.exceptions" />
       <recent name="br.dev.diego.util" />
       <recent name="br.dev.diego.repositories" />
       <recent name="br.dev.diego.controllers" />
-      <recent name="br.dev.diego.services.impl" />
     </key>
   </component>
   <component name="RunManager">
@@ -195,7 +233,9 @@
       <workItem from="1682482459894" duration="963000" />
       <workItem from="1682911383629" duration="29660000" />
       <workItem from="1683036185322" duration="680000" />
-      <workItem from="1683062240268" duration="4412000" />
+      <workItem from="1683062240268" duration="13733000" />
+      <workItem from="1683081611396" duration="1698000" />
+      <workItem from="1683164413726" duration="2671000" />
     </task>
     <servers />
   </component>
@@ -207,12 +247,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/dev/diego/entities/Pedido.java</url>
-          <line>49</line>
+          <line>67</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/dev/diego/entities/Pedido.java</url>
-          <line>54</line>
+          <line>72</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -222,12 +262,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/ProdutoJdbcImpl.java</url>
-          <line>66</line>
+          <line>82</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/ProdutoJdbcImpl.java</url>
-          <line>89</line>
+          <line>105</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>

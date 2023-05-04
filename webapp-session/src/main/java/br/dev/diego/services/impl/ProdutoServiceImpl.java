@@ -3,6 +3,7 @@ package br.dev.diego.services.impl;
 import br.dev.diego.entities.Categoria;
 import br.dev.diego.entities.Produto;
 import br.dev.diego.services.ProdutoService;
+import jakarta.enterprise.inject.Alternative;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+//@Alternative
 public class ProdutoServiceImpl implements ProdutoService {
     @Override
     public List<Produto> listarProdutos() {

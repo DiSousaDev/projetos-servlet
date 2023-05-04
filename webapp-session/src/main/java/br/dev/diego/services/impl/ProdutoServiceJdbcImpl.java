@@ -1,27 +1,26 @@
 package br.dev.diego.services.impl;
 
+import br.dev.diego.config.ProdutoServicePrincipal;
+import br.dev.diego.config.Service;
 import br.dev.diego.entities.Categoria;
 import br.dev.diego.entities.Produto;
-import br.dev.diego.repositories.impl.CategoriaRepositoryImpl;
-import br.dev.diego.repositories.impl.ProdutoJdbcImpl;
-import br.dev.diego.repositories.Repository;
+import br.dev.diego.repositories.CrudRepository;
 import br.dev.diego.services.ProdutoService;
 import br.dev.diego.services.exceptions.ServerJdbcException;
+import jakarta.inject.Inject;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@ProdutoServicePrincipal
 public class ProdutoServiceJdbcImpl implements ProdutoService {
 
-    private final Repository<Categoria> categoriaRepository;
-    private final Repository<Produto> produtoRepository;
-
-    public ProdutoServiceJdbcImpl(Connection conn) {
-        this.produtoRepository = new ProdutoJdbcImpl(conn);
-        this.categoriaRepository = new CategoriaRepositoryImpl(conn);
-    }
+    @Inject
+    private CrudRepository<Categoria> categoriaRepository;
+    @Inject
+    private CrudRepository<Produto> produtoRepository;
 
     @Override
     public List<Produto> listarProdutos() {

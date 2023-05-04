@@ -56,6 +56,6 @@
         </tr>
     </c:forEach>
 </table>
-<p>${applicationScope.atributoApp}</p>
-<p>${requestScope.atributoRequest}</p>
+<p>${applicationScope.att1}</p>
+<p>${requestScope.att1}</p>
 <jsp:include page="layout/footer.jsp" />

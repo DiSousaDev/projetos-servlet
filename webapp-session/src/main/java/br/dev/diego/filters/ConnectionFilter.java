@@ -1,8 +1,9 @@
 package br.dev.diego.filters;
 
+import br.dev.diego.config.MySqlConn;
 import br.dev.diego.services.exceptions.ConnectionJdbcException;
 import br.dev.diego.services.exceptions.ServerJdbcException;
-import br.dev.diego.util.DBConnectionDSUtil;
+import jakarta.inject.Inject;
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -18,27 +19,31 @@ import java.sql.SQLException;
 @WebFilter("/*")
 public class ConnectionFilter implements Filter {
 
+    @Inject
+    @MySqlConn
+    private Connection conn;
+
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 
-        try (Connection conn = DBConnectionDSUtil.getConnection()) {
-
-            if(conn.getAutoCommit()) {
-                conn.setAutoCommit(false);
-            }
+       /* try {
+            Connection connRequest = this.conn;
+            if(connRequest.getAutoCommit()) {
+                connRequest.setAutoCommit(false);
+            } */
 
             try {
-                servletRequest.setAttribute("conn", conn);
+            //    servletRequest.setAttribute("conn", connRequest);
                 filterChain.doFilter(servletRequest, servletResponse);
-                conn.commit();
-            } catch (SQLException | ServerJdbcException e) {
-                conn.rollback();
+                //connRequest.commit();
+            } catch (ServerJdbcException e) {
+               // connRequest.rollback();
                 ((HttpServletResponse)servletResponse).sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getMessage());
                 e.printStackTrace();
             }
-        } catch (SQLException | ConnectionJdbcException e) {
+ /*       } catch (SQLException | ConnectionJdbcException e) {
             e.printStackTrace();
-        }
+        }*/
 
     }
 }

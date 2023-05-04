@@ -1,11 +1,15 @@
 package br.dev.diego.services.impl;
 
+import br.dev.diego.config.LoginServicePrincipal;
 import br.dev.diego.services.LoginService;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 import java.util.Optional;
 
+@ApplicationScoped
+@LoginServicePrincipal
 public class LoginServiceSessionImpl implements LoginService {
 
     @Override
