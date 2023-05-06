@@ -10,9 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9235b68-5b19-4935-b066-b59403733cff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../hibernate-jpa-app/src/main/java/br/dev/diego/entities/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernate-jpa-app/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hibernate-jpa-app/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hibernate-jpa-app/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hibernate-jpa-app/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hibernate-jpa-app/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hibernate-jpa-app/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hibernate-jpa-app/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hibernate-jpa-app/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hibernate-jpa-app/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hibernate-jpa-app/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hibernate-jpa-app/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hibernate-jpa-app/src/main/java/br/dev/diego/entities/entities/Cliente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hibernate-jpa-app/src/main/java/br/dev/diego/entities/entities/HibernateListar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hibernate-jpa-app/src/main/java/br/dev/diego/entities/utils/JpaUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hibernate-jpa-app/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -64,7 +78,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Workspace-IntelliJ IDEA/projetos-servlet/hibernate-jpa-app",
+    "last_opened_file_path": "C:/Workspace-IntelliJ IDEA/projetos-servlet/webapp-jpa",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -204,6 +218,8 @@
       <workItem from="1683081611396" duration="1698000" />
       <workItem from="1683164413726" duration="3111000" />
       <workItem from="1683336702832" duration="367000" />
+      <workItem from="1683400478792" duration="84000" />
+      <workItem from="1683400620620" duration="449000" />
     </task>
     <servers />
   </component>
