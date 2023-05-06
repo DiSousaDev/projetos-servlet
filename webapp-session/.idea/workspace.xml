@@ -10,45 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9235b68-5b19-4935-b066-b59403733cff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/config/LoginServicePrincipal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/config/MySqlConn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/config/PedidoCompra.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/config/ProducerResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/config/ProdutoServicePrincipal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/config/Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/config/Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/interceptors/Logging.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/interceptors/LoggingInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/interceptors/TransactionInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/interceptors/TransactionalJdbc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-jpa-app/src/main/java/br/dev/diego/entities/Cliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernate-jpa-app/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/AdicionarItemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/AdicionarItemServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoExcluirServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoExcluirServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoFormServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoFormServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/ProdutoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/RemoverItemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/controllers/RemoverItemServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/entities/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/entities/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/filters/ConnectionFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/filters/ConnectionFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/filters/LoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/filters/LoginFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/listners/AppListner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/listners/AppListner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/CrudRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/UsuarioRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/CategoriaRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/CategoriaRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/ProdutoJdbcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/ProdutoJdbcImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/UsuarioRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/repositories/impl/UsuarioRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/LoginServiceCookieImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/LoginServiceCookieImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/LoginServiceSessionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/LoginServiceSessionImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/ProdutoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/ProdutoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/ProdutoServiceJdbcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/ProdutoServiceJdbcImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/UsuarioServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/dev/diego/services/impl/UsuarioServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/carrinho.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/carrinho.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/listar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listar.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,30 +57,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Workspace-IntelliJ IDEA/projetos-servlet/hibernate-jpa-app",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="br.dev.diego.config" />
@@ -235,7 +202,8 @@
       <workItem from="1683036185322" duration="680000" />
       <workItem from="1683062240268" duration="13733000" />
       <workItem from="1683081611396" duration="1698000" />
-      <workItem from="1683164413726" duration="2671000" />
+      <workItem from="1683164413726" duration="3111000" />
+      <workItem from="1683336702832" duration="367000" />
     </task>
     <servers />
   </component>
