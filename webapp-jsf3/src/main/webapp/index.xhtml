@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta charset="UTF-8"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"/>
+    <title>#{titulo}</title>
+</h:head>
+<h:body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <h:link outcome="index" value="Home" class="nav-link active"/>
+                    </li>
+                    <li class="nav-item">
+                        <h:link outcome="form" value="Cadastrar Produto" class="nav-link"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h:panelGrid border="1">
+            <f:facet name="header">
+                <h:outputText value="#{titulo2}"/>
+            </f:facet>
+            <h:form id="criarProdutoForm">
+                <h:commandButton value="Cadastrar Produto" action="form.xhtml" class="btn btn-primary my-2"/>
+            </h:form>
+
+            <h:outputText value="Nenhum produto cadastrado." rendered="#{empty listarProdutos}" class="alert alert-warning"/>
+
+            <h:dataTable value="#{listarProdutos}" var="prod" rendered="#{not empty listarProdutos}" class="table table-hover table-striped">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Id"/>
+                    </f:facet>
+                    <h:outputText value="#{prod.id}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Nome"/>
+                    </f:facet>
+                    <h:outputText value="#{prod.nome}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Preço"/>
+                    </f:facet>
+                    <h:outputText value="#{prod.preco}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Sku"/>
+                    </f:facet>
+                    <h:outputText value="#{prod.sku}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Data de Cadastro"/>
+                    </f:facet>
+                    <h:outputText value="#{prod.dataRegistro}">
+                        <f:convertDateTime type="localDate" pattern="dd/MM/yyyy"/>
+                    </h:outputText>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Categoria"/>
+                    </f:facet>
+                    <h:outputText value="#{prod.categoria.nome}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Editar"/>
+                    </f:facet>
+                    <h:form id="editarProdutoForm">
+                        <h:commandLink value="editar" action="#{produtoController.editar(prod.id)}" class="btn btn-sm btn-success"/>
+                    </h:form>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Editar Get"/>
+                    </f:facet>
+                    <h:link value="editar2" outcome="form" class="btn btn-sm btn-info">
+                        <f:param name="id" value="#{prod.id}"/>
+                    </h:link>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Excluir"/>
+                    </f:facet>
+                    <h:form id="excluirProdutoForm">
+                        <h:commandLink value="excluir" action="#{produtoController.excluir(prod.id)}" class="btn btn-sm btn-danger"
+                                       onclick="return confirm('Tem certeza que deseja excluir?')"/>
+                    </h:form>
+                </h:column>
+            </h:dataTable>
+        </h:panelGrid>
+    </div>
+</h:body>
+</html>

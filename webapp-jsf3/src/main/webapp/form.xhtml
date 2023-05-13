@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"/>
+    <title>Formulário de Produto</title>
+</h:head>
+
+<h:body>
+    <f:metadata>
+        <f:viewParam name="id" value="#{produtoController.id}"/>
+    </f:metadata>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <h:link outcome="index" value="Home" class="nav-link active"/>
+                    </li>
+                    <li class="nav-item">
+                        <h:link outcome="form" value="Cadastrar Produto" class="nav-link"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h:panelGrid border="1" class="table">
+            <f:facet name="header">
+                <h:outputText value="#{produto.id > 0 ? 'Editando' : 'Cadastrando'} Produto"/>
+            </f:facet>
+            <h:link outcome="index" value="Voltar" class="btn btn-sm btn-primary my-2"/>
+            <h:form>
+                <h:panelGrid columns="3" class="table table-hover table-striped">
+                    <h:outputLabel class="col-form-label" value="Nome" for="nome"/>
+                    <h:inputText class="form-control" id="nome" value="#{produto.nome}" label="Nome"/>
+                    <h:message for="nome" style="color: red"/>
+
+                    <h:outputLabel class="col-form-label" value="Preço" for="preco"/>
+                    <h:inputText class="form-control" id="preco" value="#{produto.preco}" label="Preço"/>
+                    <h:message for="preco" style="color: red"/>
+
+                    <h:outputLabel class="col-form-label" value="Sku" for="sku"/>
+                    <h:inputText class="form-control" id="sku" value="#{produto.sku}" label="Sku"/>
+                    <h:message for="sku" style="color: red"/>
+
+                    <h:outputLabel class="col-form-label" value="Data de Cadastro" for="dataCadastro"/>
+                    <h:inputText class="form-control" id="dataCadastro" value="#{produto.dataRegistro}" label="Data Cadas."
+                                 converterMessage="Informe a data no formato yyyy-MM-dd">
+                        <f:convertDateTime type="localDate" pattern="yyyy-MM-dd"/>
+                        <f:passThroughAttribute name="type" value="date"/>
+                    </h:inputText>
+                    <h:message for="dataCadastro" style="color: red"/>
+
+                    <h:outputLabel class="col-form-label"  value="Categoria" for="categoria"/>
+                    <h:selectOneMenu class="form-select" id="categoria" value="#{produto.categoria}">
+                        <f:selectItem itemLabel="--- Selecione Categoria ---" itemValue="#{null}"/>
+                        <f:selectItems value="#{categorias}" var="cat" itemLabel="#{cat.nome}"/>
+                        <f:converter binding="#{categoriaConverter}"/>
+                    </h:selectOneMenu>
+                    <h:message for="categoria" style="color: red"/>
+
+                    <h:commandButton value="#{produto.id > 0 ? 'Editar' : 'Salvar'}" action="#{produtoController.salvar}" class="btn btn-sm btn-primary"/>
+                    <h:inputHidden value="#{produto.id}"/>
+                    <p>&#160;</p>
+                </h:panelGrid>
+
+            </h:form>
+        </h:panelGrid>
+    </div>
+</h:body>
+</html>

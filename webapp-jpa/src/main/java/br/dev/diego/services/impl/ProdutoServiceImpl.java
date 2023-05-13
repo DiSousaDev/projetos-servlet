@@ -1,54 +1,82 @@
 package br.dev.diego.services.impl;
 
+import br.dev.diego.config.ProdutoServicePrincipal;
+import br.dev.diego.config.RepositoryJPA;
+import br.dev.diego.config.Service;
 import br.dev.diego.entities.Categoria;
 import br.dev.diego.entities.Produto;
+import br.dev.diego.interceptors.TransactionalJpa;
+import br.dev.diego.repositories.CrudRepository;
 import br.dev.diego.services.ProdutoService;
-import jakarta.enterprise.inject.Alternative;
+import br.dev.diego.services.exceptions.ServerJdbcException;
+import jakarta.inject.Inject;
 
-import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
-//@Alternative
+@Service
+@ProdutoServicePrincipal
+@TransactionalJpa
 public class ProdutoServiceImpl implements ProdutoService {
+
+    @Inject
+    @RepositoryJPA
+    private CrudRepository<Categoria> categoriaRepository;
+    @Inject
+    @RepositoryJPA
+    private CrudRepository<Produto> produtoRepository;
+
     @Override
     public List<Produto> listarProdutos() {
-        return Arrays.asList(
-                new Produto(1L, "Notebook", 1L, 3500, "sku", LocalDate.now()),
-                new Produto(2L, "Mesa de Escritório", 1L, 1200, "sku", LocalDate.now()),
-                new Produto(3L, "Teclado Mecânico", 1L, 289, "sku", LocalDate.now())
-        );
+        try {
+            return produtoRepository.listar();
+        } catch (Exception e) {
+            throw new ServerJdbcException("Erro ao listar produtos", e.getCause());
+        }
     }
 
     @Override
     public Optional<Produto> buscarPorId(Long id) {
-        if (id == null || id == 0) {
-            return Optional.empty();
+        try {
+            return Optional.ofNullable(produtoRepository.buscarPorId(id));
+        } catch (Exception e) {
+            throw new ServerJdbcException("Erro ao buscar produtos", e.getCause());
         }
-        List<Produto> produtos = listarProdutos();
-        return produtos.stream().filter(produto -> Objects.equals(produto.getId(), id)).findFirst();
     }
 
     @Override
     public void salvar(Produto produto) {
-
+        try {
+            produtoRepository.salvar(produto);
+        } catch (Exception e) {
+            throw new ServerJdbcException("Erro ao salvar produtos", e.getCause());
+        }
     }
 
     @Override
     public void excluir(Long id) {
-
+        try {
+            produtoRepository.excluir(id);
+        } catch (Exception e) {
+            throw new ServerJdbcException("Erro ao excluir produtos", e.getCause());
+        }
     }
 
     @Override
     public List<Categoria> buscarCategorias() {
-        return null;
+        try {
+            return categoriaRepository.listar();
+        } catch (Exception e) {
+            throw new ServerJdbcException("Erro ao bucar categorias produtos", e.getCause());
+        }
     }
 
     @Override
     public Optional<Categoria> buscarCategoriaPorId(Long id) {
-        return Optional.empty();
+        try {
+            return Optional.ofNullable(categoriaRepository.buscarPorId(id));
+        } catch (Exception e) {
+            throw new ServerJdbcException("Erro ao bucar categorias produtos", e.getCause());
+        }
     }
-
 }

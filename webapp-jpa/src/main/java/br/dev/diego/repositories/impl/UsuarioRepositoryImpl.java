@@ -2,6 +2,7 @@ package br.dev.diego.repositories.impl;
 
 import br.dev.diego.config.MySqlConn;
 import br.dev.diego.config.Repository;
+import br.dev.diego.config.RepositoryJDBC;
 import br.dev.diego.entities.Usuario;
 import br.dev.diego.repositories.UsuarioRepository;
 import jakarta.inject.Inject;
@@ -13,6 +14,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Repository
+@RepositoryJDBC
 public class UsuarioRepositoryImpl implements UsuarioRepository {
 
     @Inject

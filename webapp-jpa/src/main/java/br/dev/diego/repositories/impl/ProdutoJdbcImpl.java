@@ -2,6 +2,7 @@ package br.dev.diego.repositories.impl;
 
 import br.dev.diego.config.MySqlConn;
 import br.dev.diego.config.Repository;
+import br.dev.diego.config.RepositoryJDBC;
 import br.dev.diego.entities.Categoria;
 import br.dev.diego.entities.Produto;
 import br.dev.diego.repositories.CrudRepository;
@@ -20,6 +21,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 @Repository
+@RepositoryJDBC
 public class ProdutoJdbcImpl implements CrudRepository<Produto> {
 
     @Inject

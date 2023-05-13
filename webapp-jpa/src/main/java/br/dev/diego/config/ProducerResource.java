@@ -1,5 +1,6 @@
 package br.dev.diego.config;
 
+import br.dev.diego.util.JPAUtil;
 import jakarta.annotation.Resource;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.RequestScoped;
@@ -7,6 +8,7 @@ import jakarta.enterprise.inject.Disposes;
 import jakarta.enterprise.inject.Produces;
 import jakarta.enterprise.inject.spi.InjectionPoint;
 import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -46,6 +48,19 @@ public class ProducerResource {
     public void close(@Disposes @MySqlConn Connection connection) throws SQLException {
         connection.close();
         log.info("Encerranco conexão BDD mysql!");
+    }
+
+    @Produces
+    @RequestScoped
+    private EntityManager beanEntityManager() {
+        return JPAUtil.getEntityManager();
+    }
+
+    public void close(@Disposes EntityManager entityManager) {
+        if(entityManager.isOpen()) {
+            entityManager.close();
+            log.info("Encerranco conexão EntityManager!");
+        }
     }
 
 }

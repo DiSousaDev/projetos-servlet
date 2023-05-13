@@ -2,6 +2,7 @@ package br.dev.diego.repositories.impl;
 
 import br.dev.diego.config.MySqlConn;
 import br.dev.diego.config.Repository;
+import br.dev.diego.config.RepositoryJDBC;
 import br.dev.diego.entities.Categoria;
 import br.dev.diego.repositories.CrudRepository;
 import jakarta.inject.Inject;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
+@RepositoryJDBC
 public class CategoriaRepositoryImpl implements CrudRepository<Categoria> {
 
     private Connection conn;
