@@ -6,6 +6,8 @@ import br.dev.diego.services.ProdutoService;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.enterprise.inject.Model;
 import jakarta.enterprise.inject.Produces;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.context.FacesContext;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
@@ -16,6 +18,9 @@ public class ProdutoController {
 
     private Produto produto;
     private Long id;
+
+    @Inject
+    private FacesContext facesContext;
 
     @Inject
     private ProdutoService service;
@@ -64,8 +69,14 @@ public class ProdutoController {
     }
 
     public String salvar() {
-        System.out.println(produto);
         service.salvar(produto);
+
+        if(produto.getId() != null && produto.getId() > 0) {
+            facesContext.addMessage(null, new FacesMessage("Produto " + produto.getNome() + " atualizado com sucesso."));
+        } else {
+            facesContext.addMessage(null, new FacesMessage("Produto " + produto.getNome() + " criado com sucesso."));
+        }
+
         return "index.xhtml?faces-redirect=true";
     }
 
@@ -74,8 +85,9 @@ public class ProdutoController {
         return "form.xhtml";
     }
 
-    public String excluir(Long id) {
-        service.excluir(id);
+    public String excluir(Produto produto) {
+        service.excluir(produto.getId());
+        facesContext.addMessage(null, new FacesMessage("Produto " + produto.getNome() + " excluido com sucesso."));
         return "index.xhtml?faces-redirect=true";
     }
 
