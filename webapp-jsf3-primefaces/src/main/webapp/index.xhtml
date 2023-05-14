@@ -12,7 +12,13 @@
             </f:facet>
             <p:divider/>
             <h:form id="criarProdutoForm">
-                <p:commandButton value="#{msg['produto.botao.criar']}" action="form.xhtml" class="p-my-2"/>
+                <p:commandButton
+                        value="#{msg['produto.botao.criar']}"
+                        class="p-my-2"
+                        onclick="PF('dialogForm').show()"
+                        icon="pi pi-plus-circle">
+                    <p:resetInput target="formProduto"/>
+                </p:commandButton>
             </h:form>
 
             <h:outputText value="#{msg['produto.texto.semcadastro']}"
@@ -22,8 +28,10 @@
                 <div class="p-field p-grid p-my-2">
                     <label for="textoPesquisar" class="p-col-fixed" style="width: 100px">Pesquisar</label>
                     <div class="p-col">
-                        <p:inputText id="textoPesquisar" value="#{produtoController.textoPesquisar}" placeholder="Pesquisar">
-                            <p:ajax listener="#{produtoController.buscarPorNome}" event="keyup" update="mostrarPesquisa produtosTable"/>
+                        <p:inputText id="textoPesquisar" value="#{produtoController.textoPesquisar}"
+                                     placeholder="Pesquisar">
+                            <p:ajax listener="#{produtoController.buscarPorNome}" event="keyup"
+                                    update="mostrarPesquisa produtosTable"/>
                         </p:inputText>
                     </div>
                     <div class="p-col">
@@ -73,13 +81,14 @@
                 <p:column headerText="#{msg['produto.botao.editar']}">
                     <h:form id="editarProdutoForm">
                         <p:commandButton value="#{msg['produto.botao.editar']}"
-                                         action="#{produtoController.editar(prod.id)}" class="ui-button-success"/>
+                                         action="#{produtoController.editar(prod.id)}"
+                                         class="ui-button-success"
+                                         onclick="PF('dialogForm').show()"
+                                         icon="pi pi-save"
+                                         update="formProduto">
+                            <p:resetInput target="formProduto"/>
+                        </p:commandButton>
                     </h:form>
-                </p:column>
-                <p:column headerText="#{msg['produto.botao.editar']} 2">
-                    <p:linkButton value="#{msg['produto.botao.editar']} 2" outcome="form">
-                        <f:param name="id" value="#{prod.id}"/>
-                    </p:linkButton>
                 </p:column>
                 <p:column headerText="#{msg['produto.botao.excluir']}">
                     <h:form id="excluirProdutoForm">
@@ -88,10 +97,21 @@
                                          class="ui-button-danger"
                                          onclick="return confirm('Tem certeza que deseja excluir?')"
                                          update="produtosTable"
+                                         icon="pi pi-trash"
                         />
                     </h:form>
                 </p:column>
             </p:dataTable>
+            <p:dialog
+                    header="#{produtoController.produto.id > 0 ? msg['produto.botao.editar'] : msg['produto.botao.criar']} #{msg['produto.title']}"
+                    widgetVar="dialogForm"
+                    minHeight="200"
+                    minWidth="500"
+                    showEffect="fade"
+                    modal="true">
+                <p:ajax event="close" listener="#{produtoController.fecharDialog}" update="formProduto" />
+                <ui:include src="form.xhtml"/>
+            </p:dialog>
         </p:card>
     </ui:define>
 </ui:composition>

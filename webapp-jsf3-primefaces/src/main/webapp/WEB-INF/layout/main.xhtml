@@ -16,9 +16,16 @@
         <p:card>
             <h:form>
                 <p:menubar>
-                    <p:menuitem value="#{msg['navbar.texto.home']}" outcome="index" icon="pi pi-fw pi-home"/>
-                    <p:menuitem value="#{msg['navbar.texto.produto.cadastrar']}" outcome="form"
-                                icon="pi pi-fw pi-home"/>
+                    <p:menuitem
+                            value="#{msg['navbar.texto.home']}"
+                            outcome="index"
+                            icon="pi pi-fw pi-home"
+                    />
+                    <p:menuitem
+                            value="#{msg['navbar.texto.produto.cadastrar']}"
+                            onclick="PF('dialogForm').show()"
+                            icon="pi pi-fw pi-plus"
+                    />
                     <p:menuitem icon="pi pi-fw pi-flag">
                         <p:selectOneMenu
                                 value="#{idiomaController.idioma}"
@@ -32,7 +39,9 @@
             </h:form>
 
             <div class="p-mb-2">
-                <p:messages globalOnly="true" closeable="true"/>
+                <p:messages globalOnly="true" closeable="true">
+                    <p:autoUpdate />
+                </p:messages>
                 <ui:insert name="content"/>
             </div>
 

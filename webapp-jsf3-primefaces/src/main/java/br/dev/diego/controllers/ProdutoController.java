@@ -36,6 +36,7 @@ public class ProdutoController {
     @PostConstruct
     public void init() {
         this.listarProdutos = service.buscarTodos();
+        produto = new Produto();
     }
 
     @Produces
@@ -63,8 +64,8 @@ public class ProdutoController {
         return categorias;
     }
 
-    @Produces
-    @Model
+//    @Produces
+//    @Model
     public Produto produto() {
         this.produto = new Produto();
         if(this.id != null && this.id > 0) {
@@ -75,7 +76,7 @@ public class ProdutoController {
         return this.produto;
     }
 
-    public String salvar() {
+    public void salvar() {
         if(produto.getId() != null && produto.getId() > 0) {
             facesContext.addMessage(null, new FacesMessage(String.format(bundle.getString("produto.mensagem.editar"), produto.getNome())));
         } else {
@@ -83,12 +84,12 @@ public class ProdutoController {
         }
         service.salvar(produto);
         atualizaListaProdutos();
-        return "index.xhtml";
+        produto = new Produto();
     }
 
-    public String editar(Long id) {
+    public void editar(Long id) {
         this.id = id;
-        return "form.xhtml";
+        produto();
     }
 
     public void excluir(Produto produto) {
@@ -99,6 +100,18 @@ public class ProdutoController {
 
     public void buscarPorNome() {
         this.listarProdutos = service.buscarPorNome(this.textoPesquisar);
+    }
+
+    public void fecharDialog() {
+        produto = new Produto();
+    }
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
     }
 
     public Long getId() {
