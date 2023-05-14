@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml" lang="en"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
@@ -7,17 +6,24 @@
                 template="/WEB-INF/layout/main.xhtml">
 
     <ui:define name="content">
-        <p:panelGrid columns="1">
-            <f:facet name="header">
+        <p:card columns="1">
+            <f:facet name="title">
                 <h:outputText value="#{titulo}"/>
             </f:facet>
+            <p:divider/>
             <h:form id="criarProdutoForm">
-                <p:commandButton value="#{msg['produto.botao.criar']}" action="form.xhtml" class="p-my-2" />
+                <p:commandButton value="#{msg['produto.botao.criar']}" action="form.xhtml" class="p-my-2"/>
             </h:form>
 
-            <h:outputText value="#{msg['produto.texto.semcadastro']}" rendered="#{empty listarProdutos}" />
+            <h:outputText value="#{msg['produto.texto.semcadastro']}"
+                          rendered="#{empty produtoController.listarProdutos}"/>
 
-            <p:dataTable value="#{listarProdutos}" var="prod" rendered="#{not empty listarProdutos}">
+            <p:dataTable id="produtosTable"
+                         value="#{produtoController.listarProdutos}"
+                         var="prod"
+                         rendered="#{not empty produtoController.listarProdutos}"
+                         style="max-width: 65%"
+            >
                 <p:column headerText="#{msg['produto.id']}">
                     <h:outputText value="#{prod.id}"/>
                 </p:column>
@@ -46,7 +52,8 @@
 
                 <p:column headerText="#{msg['produto.botao.editar']}">
                     <h:form id="editarProdutoForm">
-                        <p:commandButton value="#{msg['produto.botao.editar']}" action="#{produtoController.editar(prod.id)}" class="ui-button-success"/>
+                        <p:commandButton value="#{msg['produto.botao.editar']}"
+                                         action="#{produtoController.editar(prod.id)}" class="ui-button-success"/>
                     </h:form>
                 </p:column>
                 <p:column headerText="#{msg['produto.botao.editar']} 2">
@@ -56,12 +63,15 @@
                 </p:column>
                 <p:column headerText="#{msg['produto.botao.excluir']}">
                     <h:form id="excluirProdutoForm">
-                        <p:commandButton value="#{msg['produto.botao.excluir']}" action="#{produtoController.excluir(prod)}"
+                        <p:commandButton value="#{msg['produto.botao.excluir']}"
+                                         action="#{produtoController.excluir(prod)}"
                                          class="ui-button-danger"
-                                       onclick="return confirm('Tem certeza que deseja excluir?')"/>
+                                         onclick="return confirm('Tem certeza que deseja excluir?')"
+                                         update="produtosTable"
+                        />
                     </h:form>
                 </p:column>
             </p:dataTable>
-        </p:panelGrid>
+        </p:card>
     </ui:define>
 </ui:composition>

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
 <html lang="#{idiomaController.locale}">
 <f:view xmlns="http://www.w3.org/1999/xhtml" lang="en"
@@ -10,37 +9,43 @@
     <h:head>
         <meta charset="UTF-8"/>
         <title>#{titulo}</title>
+        <h:outputStylesheet library="webjars" name="primeflex/2.0.0/primeflex.min.css"/>
         <ui:insert name="head"/>
     </h:head>
     <h:body>
-        <h:form>
-            <p:menubar>
-                <p:menuitem value="#{msg['navbar.texto.home']}" outcome="index" icon="pi pi-fw pi-home"/>
-                <p:menuitem value="#{msg['navbar.texto.produto.cadastrar']}" outcome="form" icon="pi pi-fw pi-home"/>
-                <p:menuitem icon="pi pi-fw pi-flag">
-                    <p:selectOneMenu
-                            value="#{idiomaController.idioma}"
-                            valueChangeListener="#{idiomaController.selecionarIdioma}"
-                            onchange="submit()">
-                        <f:selectItem itemLabel="#{msg['navbar.texto.idioma']}" itemValue="pt-br"/>
-                        <f:selectItems value="#{idiomaController.idiomasCompativeis}"/>
-                    </p:selectOneMenu>
-                </p:menuitem>
-            </p:menubar>
-        </h:form>
         <p:card>
-            <p:messages
-                    globalOnly="true"
-                    closeable="true"
-            />
-            <ui:insert name="content"/>
+            <h:form>
+                <p:menubar>
+                    <p:menuitem value="#{msg['navbar.texto.home']}" outcome="index" icon="pi pi-fw pi-home"/>
+                    <p:menuitem value="#{msg['navbar.texto.produto.cadastrar']}" outcome="form"
+                                icon="pi pi-fw pi-home"/>
+                    <p:menuitem icon="pi pi-fw pi-flag">
+                        <p:selectOneMenu
+                                value="#{idiomaController.idioma}"
+                                valueChangeListener="#{idiomaController.selecionarIdioma}"
+                                onchange="submit()">
+                            <f:selectItem itemLabel="#{msg['navbar.texto.idioma']}" itemValue="pt-br"/>
+                            <f:selectItems value="#{idiomaController.idiomasCompativeis}"/>
+                        </p:selectOneMenu>
+                    </p:menuitem>
+                </p:menubar>
+            </h:form>
+
+            <div class="p-mb-2">
+                <p:messages globalOnly="true" closeable="true"/>
+                <ui:insert name="content"/>
+            </div>
+
             <p:divider/>
-            <footer style="clear: both">
-                <h:graphicImage value="/resources/img/logojsf1.png" alt="Logo java server faces"/>
-                <h:outputText value="#{msg['footer.texto.autor']}"/>
-                <h:outputLink value="https://github.com/DiSousaDev" title="Github"/>
-                <ui:insert name="js"/>
-            </footer>
+
+            <div class="p-mb-2">
+                <footer style="clear: both">
+                    <h:graphicImage value="/resources/img/logojsf1.png" alt="Logo java server faces"/>
+                    <h:outputText value="#{msg['footer.texto.autor']}"/>
+                    <h:outputLink value="https://github.com/DiSousaDev" title="Github"/>
+                    <ui:insert name="js"/>
+                </footer>
+            </div>
         </p:card>
     </h:body>
 </f:view>
