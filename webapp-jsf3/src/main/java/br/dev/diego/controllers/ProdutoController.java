@@ -12,6 +12,7 @@ import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
 import java.util.List;
+import java.util.ResourceBundle;
 
 @Model
 public class ProdutoController {
@@ -25,16 +26,13 @@ public class ProdutoController {
     @Inject
     private ProdutoService service;
 
-    @Produces
-    @Model
-    public String titulo() {
-        return "Olá mundo JSF 3";
-    }
+    @Inject
+    private ResourceBundle bundle;
 
     @Produces
     @Model
-    public String titulo2() {
-        return "Olá mundo JSF 3 titulo 2";
+    public String titulo() {
+        return bundle.getString("produto.texto.titulo");
     }
 
     @Produces
@@ -72,9 +70,9 @@ public class ProdutoController {
         service.salvar(produto);
 
         if(produto.getId() != null && produto.getId() > 0) {
-            facesContext.addMessage(null, new FacesMessage("Produto " + produto.getNome() + " atualizado com sucesso."));
+            facesContext.addMessage(null, new FacesMessage(String.format(bundle.getString("produto.mensagem.editar"), produto.getNome())));
         } else {
-            facesContext.addMessage(null, new FacesMessage("Produto " + produto.getNome() + " criado com sucesso."));
+            facesContext.addMessage(null, new FacesMessage(String.format(bundle.getString("produto.mensagem.criar"), produto.getNome())));
         }
 
         return "index.xhtml?faces-redirect=true";
@@ -87,7 +85,7 @@ public class ProdutoController {
 
     public String excluir(Produto produto) {
         service.excluir(produto.getId());
-        facesContext.addMessage(null, new FacesMessage("Produto " + produto.getNome() + " excluido com sucesso."));
+        facesContext.addMessage(null, new FacesMessage(String.format(bundle.getString("produto.mensagem.excluir"), produto.getNome())));
         return "index.xhtml?faces-redirect=true";
     }
 

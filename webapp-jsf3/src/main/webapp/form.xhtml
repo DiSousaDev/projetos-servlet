@@ -13,24 +13,24 @@
 
         <h:panelGrid border="1" class="table">
             <f:facet name="header">
-                <h:outputText value="#{produto.id > 0 ? 'Editando' : 'Cadastrando'} Produto"/>
+                <h:outputText value="#{produto.id > 0 ? msg['produto.botao.editar'] : msg['produto.botao.criar']} #{msg['produto.title']}"/>
             </f:facet>
-            <h:link outcome="index" value="Voltar" class="btn btn-sm btn-primary my-2"/>
+            <h:link outcome="index" value="#{msg['produto.botao.voltar']}" class="btn btn-sm btn-primary my-2"/>
             <h:form>
                 <h:panelGrid columns="3" class="table table-hover table-striped">
-                    <h:outputLabel class="col-form-label" value="Nome" for="nome"/>
+                    <h:outputLabel class="col-form-label" value="#{msg['produto.nome']}" for="nome"/>
                     <h:inputText class="form-control" id="nome" value="#{produto.nome}" label="Nome"/>
                     <h:message for="nome" style="color: red"/>
 
-                    <h:outputLabel class="col-form-label" value="Preço" for="preco"/>
+                    <h:outputLabel class="col-form-label" value="#{msg['produto.preco']}" for="preco"/>
                     <h:inputText class="form-control" id="preco" value="#{produto.preco}" label="Preço"/>
                     <h:message for="preco" style="color: red"/>
 
-                    <h:outputLabel class="col-form-label" value="Sku" for="sku"/>
+                    <h:outputLabel class="col-form-label" value="#{msg['produto.sku']}" for="sku"/>
                     <h:inputText class="form-control" id="sku" value="#{produto.sku}" label="Sku"/>
                     <h:message for="sku" style="color: red"/>
 
-                    <h:outputLabel class="col-form-label" value="Data de Cadastro" for="dataCadastro"/>
+                    <h:outputLabel class="col-form-label" value="#{msg['produto.dataRegistro']}" for="dataCadastro"/>
                     <h:inputText class="form-control" id="dataCadastro" value="#{produto.dataRegistro}"
                                  label="Data Cadas."
                                  converterMessage="Informe a data no formato yyyy-MM-dd">
@@ -39,7 +39,7 @@
                     </h:inputText>
                     <h:message for="dataCadastro" style="color: red"/>
 
-                    <h:outputLabel class="col-form-label" value="Categoria" for="categoria"/>
+                    <h:outputLabel class="col-form-label" value="#{msg['produto.categoria']}" for="categoria"/>
                     <h:selectOneMenu class="form-select" id="categoria" value="#{produto.categoria}">
                         <f:selectItem itemLabel="--- Selecione Categoria ---" itemValue="#{null}"/>
                         <f:selectItems value="#{categorias}" var="cat" itemLabel="#{cat.nome}"/>
@@ -47,7 +47,7 @@
                     </h:selectOneMenu>
                     <h:message for="categoria" style="color: red"/>
 
-                    <h:commandButton value="#{produto.id > 0 ? 'Editar' : 'Salvar'}"
+                    <h:commandButton value="#{produto.id > 0 ? msg['produto.botao.editar'] : msg['produto.botao.salvar']}"
                                      action="#{produtoController.salvar}" class="btn btn-sm btn-primary"/>
                     <h:inputHidden value="#{produto.id}"/>
                     <p>&#160;</p>

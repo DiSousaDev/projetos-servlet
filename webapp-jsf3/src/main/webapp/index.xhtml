@@ -8,48 +8,47 @@
     <ui:define name="content">
         <h:panelGrid border="1">
             <f:facet name="header">
-                <h:outputText value="#{titulo2}"/>
+                <h:outputText value="#{titulo}"/>
             </f:facet>
             <h:form id="criarProdutoForm">
-                <h:commandButton value="Cadastrar Produto" action="form.xhtml" class="btn btn-primary my-2"/>
+                <h:commandButton value="#{msg['produto.botao.criar']}" action="form.xhtml" class="btn btn-primary my-2"/>
             </h:form>
 
-            <h:outputText value="Nenhum produto cadastrado." rendered="#{empty listarProdutos}"
-                          class="alert alert-warning"/>
+            <h:outputText value="#{msg['produto.texto.semcadastro']}" rendered="#{empty listarProdutos}" class="alert alert-warning"/>
 
             <h:dataTable value="#{listarProdutos}" var="prod" rendered="#{not empty listarProdutos}"
                          class="table table-hover table-striped">
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="Id"/>
+                        <h:outputText value="#{msg['produto.id']}"/>
                     </f:facet>
                     <h:outputText value="#{prod.id}"/>
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="Nome"/>
+                        <h:outputText value="#{msg['produto.nome']}"/>
                     </f:facet>
                     <h:outputText value="#{prod.nome}"/>
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="Preço"/>
+                        <h:outputText value="#{msg['produto.preco']}"/>
                     </f:facet>
                     <h:outputText value="#{prod.preco}"/>
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="Sku"/>
+                        <h:outputText value="#{msg['produto.sku']}"/>
                     </f:facet>
                     <h:outputText value="#{prod.sku}"/>
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="Data de Cadastro"/>
+                        <h:outputText value="#{msg['produto.dataRegistro']}"/>
                     </f:facet>
                     <h:outputText value="#{prod.dataRegistro}">
                         <f:convertDateTime type="localDate" pattern="dd/MM/yyyy"/>
@@ -58,34 +57,34 @@
 
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="Categoria"/>
+                        <h:outputText value="#{msg['produto.categoria']}"/>
                     </f:facet>
                     <h:outputText value="#{prod.categoria.nome}"/>
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="Editar"/>
+                        <h:outputText value="#{msg['produto.botao.editar']}"/>
                     </f:facet>
                     <h:form id="editarProdutoForm">
-                        <h:commandLink value="editar" action="#{produtoController.editar(prod.id)}"
+                        <h:commandLink value="#{msg['produto.botao.editar']}" action="#{produtoController.editar(prod.id)}"
                                        class="btn btn-sm btn-success"/>
                     </h:form>
                 </h:column>
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="Editar Get"/>
+                        <h:outputText value="#{msg['produto.botao.editar']} 2"/>
                     </f:facet>
-                    <h:link value="editar2" outcome="form" class="btn btn-sm btn-info">
+                    <h:link value="#{msg['produto.botao.editar']} 2" outcome="form" class="btn btn-sm btn-info">
                         <f:param name="id" value="#{prod.id}"/>
                     </h:link>
                 </h:column>
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="Excluir"/>
+                        <h:outputText value="#{msg['produto.botao.excluir']}"/>
                     </f:facet>
                     <h:form id="excluirProdutoForm">
-                        <h:commandLink value="excluir" action="#{produtoController.excluir(prod)}"
+                        <h:commandLink value="#{msg['produto.botao.excluir']}" action="#{produtoController.excluir(prod)}"
                                        class="btn btn-sm btn-danger"
                                        onclick="return confirm('Tem certeza que deseja excluir?')"/>
                     </h:form>
