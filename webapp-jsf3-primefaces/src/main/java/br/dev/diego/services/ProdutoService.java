@@ -11,6 +11,7 @@ import java.util.Optional;
 public interface ProdutoService {
 
     List<Produto> buscarTodos();
+    List<Produto> buscarPorNome(String nome);
     List<Categoria> buscarTodasCategorias();
     Optional<Produto> buscarPorId(Long id);
     Optional<Categoria> buscarCategoriaPorId(Long id);

@@ -31,6 +31,8 @@ public class ProdutoController {
 
     private List<Produto> listarProdutos;
 
+    private String textoPesquisar;
+
     @PostConstruct
     public void init() {
         this.listarProdutos = service.buscarTodos();
@@ -95,6 +97,10 @@ public class ProdutoController {
         atualizaListaProdutos();
     }
 
+    public void buscarPorNome() {
+        this.listarProdutos = service.buscarPorNome(this.textoPesquisar);
+    }
+
     public Long getId() {
         return id;
     }
@@ -113,5 +119,13 @@ public class ProdutoController {
 
     private void atualizaListaProdutos() {
         this.listarProdutos = service.buscarTodos();
+    }
+
+    public String getTextoPesquisar() {
+        return textoPesquisar;
+    }
+
+    public void setTextoPesquisar(String textoPesquisar) {
+        this.textoPesquisar = textoPesquisar;
     }
 }

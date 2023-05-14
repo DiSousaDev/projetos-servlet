@@ -18,11 +18,31 @@
             <h:outputText value="#{msg['produto.texto.semcadastro']}"
                           rendered="#{empty produtoController.listarProdutos}"/>
 
+            <h:form>
+                <div class="p-field p-grid p-my-2">
+                    <label for="textoPesquisar" class="p-col-fixed" style="width: 100px">Pesquisar</label>
+                    <div class="p-col">
+                        <p:inputText id="textoPesquisar" value="#{produtoController.textoPesquisar}" placeholder="Pesquisar">
+                            <p:ajax listener="#{produtoController.buscarPorNome}" event="keyup" update="mostrarPesquisa produtosTable"/>
+                        </p:inputText>
+                    </div>
+                    <div class="p-col">
+                        <h:outputText value="#{produtoController.textoPesquisar}" id="mostrarPesquisa"/>
+                    </div>
+                </div>
+            </h:form>
+
             <p:dataTable id="produtosTable"
                          value="#{produtoController.listarProdutos}"
                          var="prod"
                          rendered="#{not empty produtoController.listarProdutos}"
                          style="max-width: 65%"
+                         rows="5"
+                         paginator="true"
+                         paginatorPosition="both"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records"
+                         rowsPerPageTemplate="5,10,{ShowAll|'All'}"
             >
                 <p:column headerText="#{msg['produto.id']}">
                     <h:outputText value="#{prod.id}"/>
