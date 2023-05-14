@@ -1,3 +1,35 @@
 
 k
 ;src/main/java/br/dev/diego/repositories/CrudRepository.java,2\c\2cf5b35959cbef9a77c826626883d21fe6e7d350
+g
+7src/main/java/br/dev/diego/services/ProdutoService.java,5\0\506055734f7e83f01d5acd95493b2bb254368af1
+b
+2src/main/java/br/dev/diego/entities/Categoria.java,6\4\6428360bd2d536e16d7d08987670055a714d0e7b
+t
+Dsrc/main/java/br/dev/diego/repositories/CategoriaRepositoryImpl.java,6\8\681a96890929efa3955f7ae3c6a8ee23c2c01817
+m
+=src/main/java/br/dev/diego/converters/CategoriaConverter.java,a\e\ae1221899ebce6fdcd0d41ef50aceaf249daf60b
+r
+Bsrc/main/java/br/dev/diego/repositories/ProdutoRepositoryImpl.java,7\3\739cbf89bbea292c19260d5385c7019724858e4b
+k
+;src/main/java/br/dev/diego/services/ProdutoServiceImpl.java,f\a\fa723c4a09bf915676a8d893836e56fcca87d8a9
+e
+5src/main/java/br/dev/diego/ProducerEntityManager.java,3\7\372d085cd2fd27c72387df75b4a3713f99772bdf
+O
+src/main/webapp/WEB-INF/web.xml,2\e\2e22b6edd746fa3dc40ad7276c87c8d87d72a392
+Q
+!src/main/webapp/WEB-INF/beans.xml,8\3\83008b1a88ba03a2548bb5b9ad0768c6c307d36c
+`
+0src/main/java/br/dev/diego/entities/Produto.java,9\e\9e68f57c1b729aa4e086fb22b67e2334a4a12126
+a
+1src/main/java/br/dev/diego/ProducerResources.java,a\3\a320d0de7d852c8e93a7de5890d3b64754208dd0
+J
+src/main/webapp/form.xhtml,5\3\53b70a910043be1909d100ce9d72301faad74e97
+K
+src/main/webapp/index.xhtml,b\b\bb585a12746e3c58077a000cb566d3b2b7ff11e3
+l
+<src/main/java/br/dev/diego/controllers/IdiomaController.java,b\a\ba2d655d0c967e102bf95b7d8772718cc0ae2f9c
+m
+=src/main/java/br/dev/diego/controllers/ProdutoController.java,5\8\58be1fd1c432be687682cb6828bf38c2b316a482
+Y
+)src/main/webapp/WEB-INF/layout/main.xhtml,2\a\2a5fef07b67f44f9ebcce563d91388acda409e22

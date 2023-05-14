@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" lang="en"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/layout/main.xhtml">
+
+    <ui:define name="content">
+
+        <f:metadata>
+            <f:viewParam name="id" value="#{produtoController.id}"/>
+        </f:metadata>
+
+        <p:panelGrid columns="1">
+            <f:facet name="header">
+                <h:outputText value="#{produto.id > 0 ? msg['produto.botao.editar'] : msg['produto.botao.criar']} #{msg['produto.title']}"/>
+            </f:facet>
+            <p:linkButton outcome="index" value="#{msg['produto.botao.voltar']}" class="p-my-2"/>
+            <h:form>
+                <p:panelGrid columns="3">
+                    <p:outputLabel class="col-form-label" value="#{msg['produto.nome']}" for="nome"/>
+                    <p:inputText class="form-control" id="nome" value="#{produto.nome}" label="Nome"/>
+                    <p:message for="nome" style="color: red"/>
+
+                    <p:outputLabel class="col-form-label" value="#{msg['produto.preco']}" for="preco"/>
+                    <p:inputText class="form-control" id="preco" value="#{produto.preco}" label="Preço"/>
+                    <p:message for="preco" style="color: red"/>
+
+                    <p:outputLabel class="col-form-label" value="#{msg['produto.sku']}" for="sku"/>
+                    <p:inputText class="form-control" id="sku" value="#{produto.sku}" label="Sku"/>
+                    <p:message for="sku" style="color: red"/>
+
+                    <p:outputLabel class="col-form-label" value="#{msg['produto.dataRegistro']}" for="dataCadastro"/>
+                    <p:datePicker pattern="yyyy-MM-dd" class="form-control" id="dataCadastro" value="#{produto.dataRegistro}"
+                                 label="Data Cadas."
+                                 converterMessage="Informe a data no formato yyyy-MM-dd">
+                        <f:convertDateTime type="localDate" pattern="yyyy-MM-dd"/>
+                        <f:passThroughAttribute name="type" value="date"/>
+                    </p:datePicker>
+                    <p:message for="dataCadastro" style="color: red"/>
+
+                    <p:outputLabel class="col-form-label" value="#{msg['produto.categoria']}" for="categoria"/>
+                    <p:selectOneMenu class="form-select" id="categoria" value="#{produto.categoria}">
+                        <f:selectItem itemLabel="--- Selecione Categoria ---" itemValue="#{null}"/>
+                        <f:selectItems value="#{categorias}" var="cat" itemLabel="#{cat.nome}"/>
+                        <f:converter binding="#{categoriaConverter}"/>
+                    </p:selectOneMenu>
+                    <p:message for="categoria" style="color: red"/>
+
+                    <p:commandButton value="#{produto.id > 0 ? msg['produto.botao.editar'] : msg['produto.botao.salvar']}"
+                                     action="#{produtoController.salvar}" class="ui-button-outlined ui-button-success" ajax="false"/>
+                    <h:inputHidden value="#{produto.id}"/>
+                    <p>&#160;</p>
+                </p:panelGrid>
+
+            </h:form>
+        </p:panelGrid>
+    </ui:define>
+</ui:composition>

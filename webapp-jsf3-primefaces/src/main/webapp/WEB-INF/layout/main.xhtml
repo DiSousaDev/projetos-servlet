@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html lang="#{idiomaController.locale}">
+<f:view xmlns="http://www.w3.org/1999/xhtml" lang="en"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:p="http://primefaces.org/ui"
+        locale="#{idiomaController.locale}">
+    <h:head>
+        <meta charset="UTF-8"/>
+        <title>#{titulo}</title>
+        <ui:insert name="head"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:menubar>
+                <p:menuitem value="#{msg['navbar.texto.home']}" outcome="index" icon="pi pi-fw pi-home"/>
+                <p:menuitem value="#{msg['navbar.texto.produto.cadastrar']}" outcome="form" icon="pi pi-fw pi-home"/>
+                <p:menuitem icon="pi pi-fw pi-flag">
+                    <p:selectOneMenu
+                            value="#{idiomaController.idioma}"
+                            valueChangeListener="#{idiomaController.selecionarIdioma}"
+                            onchange="submit()">
+                        <f:selectItem itemLabel="#{msg['navbar.texto.idioma']}" itemValue="pt-br"/>
+                        <f:selectItems value="#{idiomaController.idiomasCompativeis}"/>
+                    </p:selectOneMenu>
+                </p:menuitem>
+            </p:menubar>
+        </h:form>
+        <p:card>
+            <p:messages
+                    globalOnly="true"
+                    closeable="true"
+            />
+            <ui:insert name="content"/>
+            <p:divider/>
+            <footer style="clear: both">
+                <h:graphicImage value="/resources/img/logojsf1.png" alt="Logo java server faces"/>
+                <h:outputText value="#{msg['footer.texto.autor']}"/>
+                <h:outputLink value="https://github.com/DiSousaDev" title="Github"/>
+                <ui:insert name="js"/>
+            </footer>
+        </p:card>
+    </h:body>
+</f:view>
+</html>
