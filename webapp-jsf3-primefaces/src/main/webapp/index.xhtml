@@ -24,7 +24,7 @@
             <h:outputText value="#{msg['produto.texto.semcadastro']}"
                           rendered="#{empty produtoController.listarProdutos}"/>
 
-            <h:form>
+            <h:form rendered="#{p:ifAnyGranted('USER,ADMIN')}">
                 <div class="p-field p-grid p-my-2">
                     <label for="textoPesquisar" class="p-col-fixed" style="width: 100px">Pesquisar</label>
                     <div class="p-col">

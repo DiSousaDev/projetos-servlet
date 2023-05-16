@@ -36,6 +36,18 @@
                             <f:selectItems value="#{idiomaController.idiomasCompativeis}"/>
                         </p:selectOneMenu>
                     </p:menuitem>
+                    <p:menuitem
+                            rendered="#{empty p:userPrincipal()}"
+                            value="Login"
+                            outcome="login"
+                            icon="pi pi-fw pi-sign-in"
+                    />
+                    <p:menuitem
+                            rendered="#{not empty p:userPrincipal()}"
+                            value="Logout"
+                            action="#{logoutController.logout}"
+                            icon="pi pi-fw pi-sign-out"
+                    />
                 </p:menubar>
             </h:form>
 

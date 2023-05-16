@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" lang="en"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/layout/main.xhtml">
+
+    <ui:define name="content">
+        <p:panel header="Login" rendered="#{empty p:userPrincipal()}">
+            <form action="j_security_check" method="post" id="formLogin">
+                <div class="p-field p-grid">
+                    <p:outputLabel class="p-col-fixed" style="width: 200px" value="Username" for="j_username"/>
+                    <div class="p-col">
+                        <p:inputText id="j_username"/>
+                    </div>
+                </div>
+                <div class="p-field p-grid">
+                    <p:outputLabel class="p-col-fixed" style="width: 200px" value="Password" for="j_password"/>
+                    <div class="p-col">
+                        <p:inputText type="password" id="j_password" />
+                    </div>
+                </div>
+
+                <div class="p-field p-grid">
+                    <div class="p-col">
+                        <p:button
+                                onclick="submit()"
+                                value="Login"
+                                class="ui-button-outlined ui-button-success"
+                        />
+                    </div>
+                </div>
+            </form>
+        </p:panel>
+
+        <p:panel header="Bem vindo, já efetuou login." rendered="#{not empty p:userPrincipal()}">
+            <p:linkButton outcome="index" value="Voltar" styleClass="p-my-2" />
+        </p:panel>
+    </ui:define>
+</ui:composition>
