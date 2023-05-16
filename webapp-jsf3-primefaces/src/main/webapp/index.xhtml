@@ -11,7 +11,7 @@
                 <h:outputText value="#{titulo}"/>
             </f:facet>
             <p:divider/>
-            <h:form id="criarProdutoForm">
+            <h:form id="criarProdutoForm" rendered="#{p:ifGranted('ADMIN')}">
                 <p:commandButton
                         value="#{msg['produto.botao.criar']}"
                         class="p-my-2"
@@ -78,7 +78,7 @@
                     <h:outputText value="#{prod.categoria.nome}"/>
                 </p:column>
 
-                <p:column headerText="#{msg['produto.botao.editar']}">
+                <p:column rendered="#{p:ifGranted('ADMIN')}" headerText="#{msg['produto.botao.editar']}">
                     <h:form id="editarProdutoForm">
                         <p:commandButton value="#{msg['produto.botao.editar']}"
                                          action="#{produtoController.editar(prod.id)}"
@@ -90,7 +90,7 @@
                         </p:commandButton>
                     </h:form>
                 </p:column>
-                <p:column headerText="#{msg['produto.botao.excluir']}">
+                <p:column rendered="#{p:ifGranted('ADMIN')}" headerText="#{msg['produto.botao.excluir']}">
                     <h:form id="excluirProdutoForm">
                         <p:commandButton value="#{msg['produto.botao.excluir']}"
                                          action="#{produtoController.excluir(prod)}"
@@ -103,6 +103,7 @@
                 </p:column>
             </p:dataTable>
             <p:dialog
+                    rendered="#{p:ifGranted('ADMIN')}"
                     header="#{produtoController.produto.id > 0 ? msg['produto.botao.editar'] : msg['produto.botao.criar']} #{msg['produto.title']}"
                     widgetVar="dialogForm"
                     minHeight="200"
